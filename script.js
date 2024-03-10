@@ -94,7 +94,7 @@ function modalAction(tdBook) {
         if (event.target.id === "modal-confirm-btn") {
             tdBook.remove();
             modal.close();
-        } else {
+        } else if (event.target.id === "modal-cancel-btn") {
             modal.close();
         };
     });
@@ -112,10 +112,12 @@ function listenClicks() {
             } else if (tdStatus.textContent === "false") {
                 tdStatus.textContent = "true";
             };
+            return;
 
         } else if (target.id === "del-btn") {
             let tdBook = target.parentElement.parentElement;
             modalAction(tdBook);
+            return;
 
         };
     });
