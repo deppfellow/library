@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark" />
+    <title>Library Project - the Odin Project</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.orange.min.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+
+    <div class="grid-container">
+        <aside>
+            <div class="sb-logo-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="4em" height="4em" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                        d="M4 10h3v7H4zm6.5 0h3v7h-3zM2 19h20v3H2zm15-9h3v7h-3zm-5-9L2 6v2h20V6z" />
+                </svg>
+                <p>LIBRARY</p>
+            </div>
+
+            <form id="book-form" action="./">
+                <div class="sb-input-wrapper">
+                    <label for="book-title">Book title:</label>
+                    <input type="text" name="book_title" id="book-title" required>
+                </div>
+                <div class="sb-input-wrapper">
+                    <label for="book-author">Book author:</label>
+                    <input type="text" name="book_author" id="book-author" required>
+                </div>
+                <div class="sb-input-wrapper">
+                    <label for="book-pages">Book pages:</label>
+                    <input type="number" name="book_pages" id="book-pages">
+                </div>
+
+                <div class="sb-input-wrapper">
+                    <label for="book-readStatus">
+                        <input type="checkbox" name="book_readStatus" id="book-readStatus" role="switch">
+                        Complete reading
+                    </label>
+                </div>
+
+                <button type="submit">Add book</button>
+            </form>
+        </aside>
+
+        <main>
+            <div class="list-container">
+                <h2>List of Books</h2>
+                <!-- <div class="ls-book-wrapper">
+                    <details>
+                        <summary role="button" class="outline">The Hidden Cost of Money</summary>
+                        <p>Title: The Hidden Cost of Money</p>
+                        <p>Author: Seb Bunney</p>
+                        <p>Pages: 397</p>
+                        <p>Completed: No</p>
+                    </details>
+                </div>
+                <div class="ls-book-wrapper">
+                    <details>
+                        <summary role="button" class="outline">Placeholder</summary>
+                        <p>Title: Placeholder</p>
+                        <p>Author: Placeholder</p>
+                        <p>Pages: Placeholder</p>
+                        <p>Completed: Placeholder</p>
+                    </details>
+                    <button>Delete</button>
+                </div> -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Title</th>
+                            <th scope="col">Author</th>
+                            <th scope="col">Pages</th>
+                            <th scope="col">Read Status</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <tr>
+                            <th scope="row">The Hidden Cost of Money</th>
+                            <td>Seb Bunney</td>
+                            <td>397</td>
+                            <td>No</td>
+                            <td class="tb-action-group">
+                                <button class="tb-action-btn read-status">Status</button>
+                                <button class="tb-action-btn">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <footer></footer>
+
+</body>
+
+</html>
