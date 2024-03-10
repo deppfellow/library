@@ -28,15 +28,15 @@
             <form id="book-form" action="./">
                 <div class="sb-input-wrapper">
                     <label for="book-title">Book title:</label>
-                    <input type="text" name="book_title" id="book-title" required>
+                    <input type="text" name="book_title" id="book-title" autocomplete="off" required>
                 </div>
                 <div class="sb-input-wrapper">
                     <label for="book-author">Book author:</label>
-                    <input type="text" name="book_author" id="book-author" required>
+                    <input type="text" name="book_author" id="book-author" autocomplete="off" required>
                 </div>
                 <div class="sb-input-wrapper">
                     <label for="book-pages">Book pages:</label>
-                    <input type="number" name="book_pages" id="book-pages">
+                    <input type="number" name="book_pages" id="book-pages" autocomplete="off">
                 </div>
 
                 <div class="sb-input-wrapper">
@@ -53,25 +53,22 @@
         <main>
             <div class="list-container">
                 <h2>List of Books</h2>
-                <!-- <div class="ls-book-wrapper">
-                    <details>
-                        <summary role="button" class="outline">The Hidden Cost of Money</summary>
-                        <p>Title: The Hidden Cost of Money</p>
-                        <p>Author: Seb Bunney</p>
-                        <p>Pages: 397</p>
-                        <p>Completed: No</p>
-                    </details>
-                </div>
-                <div class="ls-book-wrapper">
-                    <details>
-                        <summary role="button" class="outline">Placeholder</summary>
-                        <p>Title: Placeholder</p>
-                        <p>Author: Placeholder</p>
-                        <p>Pages: Placeholder</p>
-                        <p>Completed: Placeholder</p>
-                    </details>
-                    <button>Delete</button>
-                </div> -->
+                <dialog id="ls-modal-wrapper">
+                    <article>
+                        <header>
+                            <p>
+                                <strong>
+                                    Are you sure you want to delete this book?
+                                </strong>
+                            </p>
+                        </header>
+                        <footer>
+                            <button id="modal-cancel-btn" class="secondary">No</button>
+                            <button id="modal-confirm-btn">Yes</button>
+                        </footer>
+                    </article>
+                </dialog>
+
                 <table>
                     <thead>
                         <tr>
@@ -87,10 +84,40 @@
                             <th scope="row">The Hidden Cost of Money</th>
                             <td>Seb Bunney</td>
                             <td>397</td>
-                            <td>No</td>
+                            <td>true</td>
                             <td class="tb-action-group">
-                                <button class="tb-action-btn read-status">Status</button>
-                                <button class="tb-action-btn">Delete</button>
+                                <button id="status-btn" class="tb-action-btn">Status</button>
+                                <button id="del-btn" class="tb-action-btn">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Rum and Flower</th>
+                            <td>Unknown</td>
+                            <td>421</td>
+                            <td>false</td>
+                            <td class="tb-action-group">
+                                <button id="status-btn" class="tb-action-btn">Status</button>
+                                <button id="del-btn" class="tb-action-btn">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">If Only Its a Little Longer</th>
+                            <td>Frank Kafka</td>
+                            <td>878</td>
+                            <td>false</td>
+                            <td class="tb-action-group">
+                                <button id="status-btn" class="tb-action-btn">Status</button>
+                                <button id="del-btn" class="tb-action-btn">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Meta and the End</th>
+                            <td>Jake Peralta</td>
+                            <td>529</td>
+                            <td>true</td>
+                            <td class="tb-action-group">
+                                <button id="status-btn" class="tb-action-btn">Status</button>
+                                <button id="del-btn" class="tb-action-btn">Delete</button>
                             </td>
                         </tr>
                     </tbody>

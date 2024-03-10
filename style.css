@@ -86,9 +86,10 @@ aside form button {
     font-size: 0.8rem;
 }
 
-.tb-action-group .read-status {
+.tb-action-group #status-btn {
     background-color: var(--green-mose);
 }
+
 
 /* ============================= */
 
